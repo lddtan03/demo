@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setAttribute()</title>
+  </head>
+  <body>
+    <a href="" title="Demo title" count="998">JS beginner</a>
+    <script>
+      const aElement = document.querySelector("a");
+      console.log(aElement.count);
+      console.log(aElement.getAttribute("count"));
+      aElement.setAttribute("count", 1988);
+      console.log(aElement.getAttribute("count"));
+      console.log(aElement.getAttribute("author"));
+      aElement.setAttribute("author", "Phan Văn Cương");
+      console.log(aElement.getAttribute("author"));
+    </script>
+  </body>
+</html>

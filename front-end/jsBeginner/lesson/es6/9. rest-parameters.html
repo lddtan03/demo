@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest parameters</title>
+  </head>
+  <body>
+    <h1>Rest Parameter function</h1>
+    <script>
+      //Dùng thu nhận các đối số còn lại của 1 mảng
+      //Sử dụng cú pháp...
+      let sum = (...args) => {
+        console.log(args);
+        let s = 0;
+        args.forEach((element) => (s += element));
+        return s;
+      };
+
+      console.log(sum(1, 2, 4));
+    </script>
+  </body>
+</html>

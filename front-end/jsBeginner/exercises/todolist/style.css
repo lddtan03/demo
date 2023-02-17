@@ -1,0 +1,107 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#todolist {
+  box-sizing: border-box;
+  flex: 0 1 542px;
+  height: 367px;
+  padding: 30px;
+  background-color: #1e272e;
+  margin-top: 60px;
+}
+
+.task-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+form.task-head input {
+  flex-grow: 0.95;
+  padding: 10px 15px 10px 0px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ff6f6f;
+  background-color: transparent;
+  color: #ff6f6f;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+form.task-head input::placeholder {
+  color: #ff6f6f;
+}
+
+form.task-head button {
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  color: #ffffff;
+  background-color: #ff2b2b;
+  padding: 10px 15px;
+}
+
+ul {
+  padding: 0px;
+  list-style: none;
+}
+
+li.task-item {
+  display: flex;
+  justify-content: space-between;
+  color: #525252;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 8px 0px;
+  border-bottom: 1px solid #525252;
+}
+
+li.task-item .task-action {
+  display: flex;
+  flex-direction: row;
+}
+
+li.task-item .task-action button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+li.task-item .task-action button svg {
+  color: #525252;
+  font-size: 15px;
+  width: 18px;
+  height: 18px;
+  margin-bottom: -4px;
+}
+
+li.task-item span {
+  cursor: pointer;
+}
+
+li.task-item:hover .task-action button svg {
+  color: #c7c7c7;
+}
+
+li.task-item:hover span {
+  color: #c7c7c7;
+}
+
+.task-result {
+  color: #828282;
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* li.task-item .task-action button {
+  background-color: #1e272e;
+  border: none;
+  padding: 0px 2px;
+}
+ */

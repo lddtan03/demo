@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread operator for array</title>
+  </head>
+  <body>
+    <h1>Spread operator for array</h1>
+    <script>
+      //spread operator
+      //1. embed element
+      let first_array = [4, 6, 10];
+      let second_array = [1, 2, ...first_array, 34, 64];
+      console.log(second_array);
+
+      //2. copy array
+      let new_array = [...first_array];
+      console.log(new_array);
+
+      //3. contact array
+      let new_arr = [...first_array, ...second_array];
+      console.log(new_arr);
+    </script>
+  </body>
+</html>

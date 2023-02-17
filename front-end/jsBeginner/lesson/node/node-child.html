@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node child</title>
+  </head>
+  <body>
+    <h1>Node child</h1>
+    <a href="">Học lập trình web đi làm</a>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam fugiat
+      architecto ab ex amet nisi recusandae sed tenetur reprehenderit voluptate?
+      Illum laudantium voluptates fugiat maxime hic aperiam labore officiis
+      cupiditate!
+    </p>
+    <ul id="main-menu">
+      <li>
+        <a href="">Item 1</a>
+        <ul class="sub-menu">
+          <li><a href="">Item 1.1</a></li>
+          <li><a href="">Item 1.1</a></li>
+          <li><a href="">Item 1.1</a></li>
+        </ul>
+      </li>
+      <li><a href="">Item 2</a></li>
+      <li><a href="">Item 3</a></li>
+      <li><a href="">Item 4</a></li>
+    </ul>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla laudantium,
+      fugiat assumenda nesciunt soluta atque distinctio maxime reiciendis modi,
+      temporibus deserunt quasi! Provident molestias hic placeat porro amet
+      adipisci tenetur.
+    </p>
+    <script>
+      const bodyNode = document.body;
+      console.log(bodyNode.childNodes);
+      console.log(bodyNode.children);
+      console.log(bodyNode.querySelector("a"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring Js</title>
+  </head>
+  <body>
+    <h1>Destructuring Js</h1>
+    <script>
+      // 1. Nhận giá trị từ array, object
+
+      //   let my_arr = [3, 6, 18];
+      //   let a = my_arr[0];
+      //   let b = my_arr[1];
+      //   let c = my_arr[2];
+      //   let [a, b, c] = my_arr;
+      //   console.log(`a = ${a}`);
+      //   console.log(`b = ${b}`);
+      //   console.log(`c = ${c}`);
+
+      let my_obj = {
+        fullname: "Phan Văn Cương",
+        email: "support@unitop.vn",
+      };
+      //   let fullname = my_obj.fullname;
+      //   let email = my_obj.email;
+      let { fullname, email } = my_obj;
+      console.log(fullname);
+      console.log(email);
+
+      // 2. Default value
+      //   let my_arr = [3, 6, 18];
+      //   let [a, b, c, d = 23] = my_arr;
+      //   console.log(a);
+      //   console.log(b);
+      //   console.log(c);
+      //   console.log(d);
+
+      // 3. ...rest
+      //   let my_arr = [3, 6, 18, 44, 62, 45, 66, 88, 55, 34];
+      //   let [a, b, ...rest] = my_arr;
+      //   console.log(a);
+      //   console.log(b);
+      //   console.log(rest);
+
+      // 4. Bỏ qua phần tử
+      //   let my_arr = [3, 6, 18, 44, 62, 45, 66, 88, 55, 34];
+      //   let [a, , , c] = my_arr;
+      //   console.log(a);
+      //   console.log(c);
+
+      // 5. Hoán đổi giá trị
+      //   let a = 10,
+      //     b = 15;
+      //   console.log(a);
+      //   console.log(b);
+      //   [a, b] = [b, a];
+      //   console.log(a);
+      //   console.log(b);
+
+      // 6. Nhận giá trị từ function
+      let my_function = (a, b) => {
+        return { a, b };
+      };
+      let { a, b } = my_function(34, 35);
+      console.log(a);
+      console.log(b);
+    </script>
+  </body>
+</html>

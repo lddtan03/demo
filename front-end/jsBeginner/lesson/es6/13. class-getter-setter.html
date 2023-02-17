@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getter, Setter Class Js</title>
+  </head>
+  <body>
+    <h1>Getter, Setter Class Js</h1>
+    <script>
+      class Student {
+        constructor(fullname, uni, std_year) {
+          this.fullname = fullname;
+          this.uni = uni;
+          this.std_year = std_year;
+        }
+
+        get getFullname() {
+          return this.fullname;
+        }
+
+        set setFullname(fullname) {
+          this.fullname = fullname;
+        }
+      }
+
+      let my_info = new Student("Phan Văn Cương", "Đại học KH Huế", 4);
+      console.log(my_info.getFullname);
+      my_info.setFullname = "Lê Đức Duy Tân";
+      console.log(my_info.getFullname);
+    </script>
+  </body>
+</html>

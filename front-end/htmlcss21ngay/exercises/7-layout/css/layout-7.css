@@ -1,0 +1,36 @@
+#header {
+  max-width: 100%;
+  background-color: crimson;
+}
+
+#wp-content {
+  display: flex;
+  min-height: 900px;
+}
+
+h2,
+h3 {
+  margin: 0px;
+}
+
+#content {
+  flex-basis: 60%;
+  background-color: whitesmoke;
+  padding: 15px;
+}
+
+#sidebar-left {
+  flex-basis: 20%;
+  background-color: gray;
+  padding: 15px;
+}
+
+#sidebar-right {
+  flex-basis: 20%;
+  background-color: gray;
+  padding: 15px;
+}
+
+#footer {
+  background-color: black;
+}

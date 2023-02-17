@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array filter</title>
+  </head>
+  <body>
+    <h1>Lọc mảng bằng filter js</h1>
+    <script>
+      let list_number = [5, 45, 34, 6, 2, 9];
+      let result;
+      result = list_number.filter(function (currentValue) {
+        if (currentValue % 2 == 1) return true;
+      });
+      document.write(result);
+    </script>
+  </body>
+</html>

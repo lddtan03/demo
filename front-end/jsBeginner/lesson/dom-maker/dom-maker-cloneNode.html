@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cloneNode()</title>
+  </head>
+  <body>
+    <style>
+      .current {
+        color: red;
+      }
+    </style>
+    <h1>cloneNode() JavaScript</h1>
+    <ul id="langs">
+      <li><a href="#">Trang chủ</a></li>
+      <li><a href="#">Giới thiệu</a></li>
+      <li class="current">
+        <a href="#">Khóa học</a>
+        <ul class="sub-menu">
+          <li><a href="">Html css 21 ngày</a></li>
+          <li><a href="">php master</a></li>
+        </ul>
+      </li>
+    </ul>
+    <script>
+      const langs = document.getElementById("langs");
+      const current = document.querySelector("li.current");
+      const liNew = current.cloneNode(true);
+      langs.appendChild(liNew);
+    </script>
+  </body>
+</html>

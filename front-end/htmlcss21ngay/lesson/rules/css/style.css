@@ -1,0 +1,17 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.p1 {
+    font-weight: 900;
+    font-style: italic;
+}
+
+.p2 {
+    font-style: normal;
+    font-weight: 500;
+}
+
+.p3 {
+    font-weight: 900;
+}

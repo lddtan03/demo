@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array add remove</title>
+  </head>
+  <body>
+    <h1>Array add remove</h1>
+    <script>
+      let list_users = ["Cương", "Phong", "Tuấn"];
+      list_users.push("Hằng"); //Thêm vào cuối mảng
+      list_users.unshift("Minh"); //Thêm vào đầu mảng
+      list_users.pop();
+      list_users.shift();
+      console.log(list_users);
+      //Tạo ra 1 mảng sau đó đưa tất cả các số chẵn vào
+      let list_number = [2, 3, 45, 4, 7, 9, 2, 4, 5, 6, 6, 3, 4, 244, 566];
+      let list_even = [];
+      for (let value of list_number) {
+        if (value % 2 == 0) {
+          list_even.push(value);
+        }
+      }
+      document.write(list_even);
+    </script>
+  </body>
+</html>

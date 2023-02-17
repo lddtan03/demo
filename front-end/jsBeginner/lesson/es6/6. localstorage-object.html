@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Localstorage Object</title>
+  </head>
+  <body>
+    <h1>Localstorage Object</h1>
+    <script>
+      const list_user = "list_user";
+      let user = {
+        fullname: "Phan Văn Cương",
+        email: "support@unitop.vn",
+        age: 35,
+      };
+
+      let users = [
+        {
+          fullname: "Phan Văn Cương",
+          email: "support@unitop.vn",
+          age: 35,
+        },
+        {
+          fullname: "Trần Thu Hằng",
+          email: "support@unitop.vn",
+          age: 35,
+        },
+      ];
+
+      //   localStorage.setItem("user_info", JSON.stringify(user));
+      //   let data = JSON.parse(localStorage.getItem("user_info"));
+      //   console.log(data.email);
+      localStorage.setItem(list_user, JSON.stringify(users));
+      let data = JSON.parse(localStorage.getItem(list_user));
+      console.log(data);
+    </script>
+  </body>
+</html>

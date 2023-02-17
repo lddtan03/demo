@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>append()</title>
+  </head>
+  <body>
+    <h1>append() JavaScript</h1>
+    <ul id="menu">
+      <li>Home page</li>
+      <li>About</li>
+    </ul>
+    <script>
+      //Thêm course, contact
+      const menu = document.getElementById("menu");
+      const li1 = document.createElement("li");
+      li1.textContent = "Course";
+      const li2 = document.createElement("li");
+      li2.textContent = "Contact";
+      menu.append(li1, li2);
+    </script>
+  </body>
+</html>

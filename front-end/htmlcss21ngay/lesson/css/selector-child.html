@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Child Selector</title>
+</head>
+
+<body>
+  <style>
+    ul li:first-child{
+      font-size: 30px;
+    }
+    ul li:last-child{
+      color: blue;
+    }
+    ul li:nth-child(2){
+      font-size: 20px;
+      color: goldenrod;
+    }
+    ul li ul li:nth-child(3){
+      color: yellow;
+    }
+    ul li:nth-child(2n){
+      color:red;
+    }
+  </style>
+  <h1>Child Selector</h1>
+  <ul>
+    <li>item 1</li>
+    <li>item 2
+      <ul>
+        <li>item 2.1</li>
+        <li>item 2.2</li>
+        <li>item 2.3</li>
+        <li>item 2.4</li>
+
+      </ul>
+    </li>
+    <li>item 3</li>
+    <li>item 4</li>
+    <li>item 5</li>
+    <li>item 6</li>
+    <li>item 7</li>
+    <li>item 8</li>
+    <li>item 9</li>
+    <li>item 10</li>
+    <li>item 11</li>
+    <li>item 12</li>
+  </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Ex-7</title>
+  </head>
+  <body>
+    <style>
+      ul.products {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        max-width: 600px;
+      }
+
+      li.product-item {
+        /* width: 300px;
+        width: 45%; */
+        flex: 0 1 45%;
+      }
+
+      .product-item img {
+        /* height: auto; */
+        max-width: 100%;
+      }
+    </style>
+    <h1>Thay đổi ảnh khi hover Js</h1>
+
+    <ul class="products">
+      <li class="product-item">
+        <img
+          data-src-v2="img/libazz-fashion-jacket-2.jpeg"
+          data-src-v1="img/libazz-fashion-jacket-1.jpeg"
+          src="img/libazz-fashion-jacket-1.jpeg"
+          alt=""
+        />
+      </li>
+      <li class="product-item">
+        <img
+          data-src-v2="img/libazz-fashion-bag-2.jpeg"
+          data-src-v1="img/libazz-fashion-bag-1.jpeg"
+          src="img/libazz-fashion-bag-1.jpeg"
+          alt=""
+        />
+      </li>
+    </ul>
+    <script>
+      // const productItems = document.getElementsByClassName("product-item");
+      const productItems = document.querySelectorAll(".product-item");
+      for (let productItem of productItems) {
+        productItem.addEventListener("mouseover", function () {
+          const srcV2 = this.querySelector("img").dataset.srcV2;
+          this.querySelector("img").setAttribute("src", srcV2);
+        });
+        productItem.addEventListener("mouseout", function () {
+          const srcV1 = this.querySelector("img").dataset.srcV1;
+          this.querySelector("img").setAttribute("src", srcV1);
+        });
+      }
+    </script>
+  </body>
+</html>
