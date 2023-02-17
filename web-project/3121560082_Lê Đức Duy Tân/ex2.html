@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+        line-height: 1.5;
+      }
+      /* @media (min-width: 576px) {
+      }
+      @media (min-width: 768px) {
+      }
+      @media (min-width: 992px) {
+      }
+      @media (min-width: 1200px) {
+      } */
+
+      /* @media (max-width: 1200px) {
+      }
+      @media (max-width: 750px) {
+        #sidebar-right {
+          display: none;
+        }
+      } */
+
+      #wrapper {
+        max-width: 100%;
+      }
+
+      #header {
+        border: 2px solid red;
+        position: relative;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      button {
+        display: none;
+      }
+
+      #wp-content {
+        display: flex;
+      }
+
+      #sidebar-right,
+      #sidebar-left {
+        flex-basis: 20%;
+      }
+
+      #content {
+        text-align: justify;
+        flex-basis: 60%;
+      }
+
+      ul#main-menu {
+        border-top: 2px solid blue;
+      }
+
+      #reponsive-menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        display: none;
+      }
+
+      #reponsive-menu li a {
+        display: block;
+        text-decoration: none;
+        color: white;
+        padding: 8px 5px;
+        background-color: grey;
+      }
+
+      #reponsive-menu li:hover a {
+        color: red;
+        background-color: bisque;
+      }
+
+      ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        margin: 0;
+      }
+
+      ul#main-menu li a {
+        display: block;
+        padding: 15px;
+        background-color: grey;
+        margin-right: 5px;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+      }
+
+      ul#main-menu li:hover a {
+        color: red;
+        background-color: bisque;
+      }
+
+      #sidebar-left,
+      .menu-sidebar {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #sidebar-left {
+        border: 2px solid goldenrod;
+        padding: 10px;
+      }
+
+      .menu-sidebar {
+        border: 2px solid royalblue;
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .menu-sidebar li {
+        margin-bottom: 10px;
+      }
+
+      .menu-sidebar li:last-child {
+        margin-bottom: 0px;
+      }
+
+      .menu-sidebar li a {
+        display: block;
+        text-decoration: none;
+        border: 1px solid tomato;
+        padding: 2px 15px;
+        border-radius: 5px;
+        color: black;
+      }
+
+      .menu-sidebar li:hover a {
+        background-color: darksalmon;
+      }
+
+      #content {
+        padding: 0 20px 20px 20px;
+      }
+
+      #sidebar-right {
+        border: 2px solid goldenrod;
+        text-align: center;
+      }
+
+      h3 {
+        background-color: brown;
+        margin: 0;
+        color: white;
+        padding: 5px;
+      }
+
+      #footer {
+        border: 2px solid greenyellow;
+        text-align: center;
+      }
+
+      #sidebar-right-reponsive {
+        border: 1.5px solid goldenrod;
+        flex-grow: 1;
+        display: none;
+        text-align: center;
+      }
+
+      @media (max-width: 750px) {
+        h1 {
+          font-size: 26px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+
+        h3 {
+          font-size: 16px;
+          padding: 3px;
+          background-color: brown;
+          margin: 0;
+          color: white;
+        }
+
+        p,
+        a {
+          font-size: 14px;
+        }
+
+        #sidebar-right {
+          display: none;
+        }
+
+        #sidebar-left {
+          flex: 1 1 30%;
+          padding: 8px;
+        }
+
+        #content {
+          flex: 1 1 70%;
+          border: 1px solid goldenrod;
+        }
+        button {
+          display: block;
+          cursor: pointer;
+        }
+
+        button:hover {
+          background-color: tomato;
+          border: 2px solid tomato;
+          color: aliceblue;
+          border-radius: 4px;
+        }
+        ul#main-menu {
+          display: none;
+        }
+        #sidebar-right-reponsive {
+          display: block;
+        }
+
+        .menu-sidebar {
+          border: 1.5px solid royalblue;
+          margin-bottom: 10px;
+          padding: 8px;
+          border-radius: 5px;
+        }
+
+        .menu-sidebar li a {
+          border: 1px solid tomato;
+          padding: 1px 15px;
+          border-radius: 5px;
+          color: black;
+        }
+
+        #content {
+          padding: 0 15px 15px 15px;
+        }
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $("#nav-toggle").click(function () {
+          $("#reponsive-menu").slideToggle();
+        });
+      });
+    </script>
+    <div id="wrapper">
+      <div id="header">
+        <h1>Nguyễn Văn A</h1>
+        <button id="nav-toggle">Nhãn</button>
+        <ul id="main-menu">
+          <li><a href="">Trang chủ</a></li>
+          <li><a href="">Thông tin tuyển sinh</a></li>
+          <li><a href="">24h.com.vn</a></li>
+          <li><a href="">Send email</a></li>
+          <li><a href="">Go to Section 2</a></li>
+        </ul>
+        <ul id="reponsive-menu">
+          <li><a href="">Trang chủ</a></li>
+          <li><a href="">Thông tin tuyển sinh</a></li>
+          <li><a href="">24h.com.vn</a></li>
+          <li><a href="">Send email</a></li>
+          <li><a href="">Go to Section 2</a></li>
+        </ul>
+      </div>
+      <!-- end header -->
+      <div id="wp-content">
+        <div id="sidebar-left">
+          <ul class="menu-sidebar">
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="">Thông tin tuyển sinh</a></li>
+            <li><a href="">Thông tin đào tạo</a></li>
+            <li><a href="">Liên hệ</a></li>
+          </ul>
+          <ul class="menu-sidebar">
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="">Thông tin tuyển sinh</a></li>
+            <li><a href="">Thông tin đào tạo</a></li>
+            <li><a href="">Liên hệ</a></li>
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="">Thông tin tuyển sinh</a></li>
+            <li><a href="">Thông tin đào tạo</a></li>
+            <li><a href="">Liên hệ</a></li>
+          </ul>
+          <ul class="menu-sidebar">
+            <li><a href="">Trang chủ</a></li>
+            <li><a href="">Thông tin tuyển sinh</a></li>
+            <li><a href="">Thông tin đào tạo</a></li>
+            <li><a href="">Liên hệ</a></li>
+          </ul>
+          <div id="sidebar-right-reponsive">
+            <h3>sidebar-right</h3>
+          </div>
+        </div>
+        <!-- end sidebar-left -->
+        <div id="content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio rerum
+            officia neque! Et quibusdam deserunt impedit, ipsa nemo, vitae
+            eligendi porro perspiciatis voluptatum quasi neque iure repellat
+            adipisci, nihil quisquam!
+          </p>
+        </div>
+        <!-- end content -->
+        <div id="sidebar-right">
+          <h3>sidebar-right</h3>
+        </div>
+      </div>
+      <!-- end content -->
+      <div id="footer">
+        <h2>footer</h2>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        text-align: center;
+        font-size: 25px;
+      }
+
+      div,
+      input,
+      select {
+        margin-top: 10px;
+      }
+      div {
+        font-weight: bold;
+      }
+      #body {
+        margin-left: 10%;
+      }
+      form {
+        width: 50%;
+        border: 1px solid;
+        padding-bottom: 30px;
+        /* padding-left: 20%; */
+      }
+    </style>
+  </head>
+
+  <body>
+    <form action="" name="frmPhieudatphong">
+      <div id="body">
+        <p>Phiếu đặt phòng</p>
+        <div id="loi"></div>
+        <hr width="80%" />
+        <div>Họ Tên*</div>
+        <input type="text" id="hoten" name="txtHoten" />
+        <div>Địa Chỉ</div>
+        <input type="text" id="diachi" name="txtDiachi" />
+        <div>Số chứng minh nhân dân*</div>
+        <input type="text" id="cmnd" name="txtcmnd" />
+        <div>Mức Giá</div>
+        <select name="" id="mucgia" onchange="dichvudb()" name="cbomucgia">
+          <option value="a">Loại thường</option>
+          <option value="b">Sang trọng</option>
+          <option value="c">Đăc biệt</option>
+        </select>
+
+        <div>
+          Ngày thuê <input type="date" id="ngaythue" name="dateNgaythue" /> Ngày
+          trả <input type="date" id="ngaytra" name="dateNgaytra" />
+        </div>
+        <div>Dịch vụ đi kèm</div>
+        <div><input type="checkbox" id="ansang" name="chkAnsang" />Ăn sáng</div>
+        <div><input type="checkbox" id="giatui" name="chkGiatui" />Giặt ủi</div>
+        <div>
+          <input type="checkbox" id="baosang" name="chkBaobuoisang" />Báo buổi
+          sáng
+        </div>
+        <div>Tiền thuê phòng</div>
+        <div><input type="text" name="txtTienthuephong" id="tien" /> VND</div>
+        <input
+          type="button"
+          onclick="thuetra()"
+          name="btnTinhdongia"
+          value="Tính đơn giá"
+        />
+        <input type="submit" name="subDangky" value="Đăng ký" />
+      </div>
+    </form>
+  </body>
+  <script>
+    function check() {
+      var t = document.getElementById("hoten").value;
+      if (t == "") {
+        document.getElementById("loi").innerText = "Họ tên không được rỗng";
+        document.getElementById("hoten").style.border = "2px solid red";
+        document.getElementById("hoten").focus();
+        return false;
+      }
+      var h = document.getElementById("cmnd").value;
+      if (h == "") {
+        document.getElementById("loi").innerText = "CMND không được rỗng";
+        document.getElementById("cmnd").style.borderColor = "red";
+        document.getElementById("cmnd").focus();
+        return false;
+      }
+      if (!Number.isInteger(parseInt(h))) {
+        document.getElementById("loi").innerText = "CMND phải là số";
+        document.getElementById("cmnd").style.borderColor = "red";
+        document.getElementById("cmnd").value = "";
+        document.getElementById("cmnd").focus();
+        return false;
+      }
+      return true;
+    }
+    function dichvudb() {
+      var mucgia = document.getElementById("mucgia").value;
+      if (mucgia != "a") document.getElementById("ansang").checked = true;
+      else document.getElementById("ansang").checked = false;
+    }
+    function thuetra() {
+      if (!check()) return false;
+      else {
+        ngthue = document.getElementById("ngaythue").value;
+        var thangth = ngthue[5] + ngthue[6];
+        var ngayth = ngthue[8] + ngthue[9];
+        var namth = ngthue[0] + ngthue[1] + ngthue[2] + ngthue[3];
+
+        ngtra = document.getElementById("ngaytra").value;
+        var thangtr = ngthue[5] + ngthue[6];
+        var ngaytr = ngthue[8] + ngthue[9];
+        var namtr = ngthue[0] + ngthue[1] + ngthue[2] + ngthue[3];
+        if (parseInt(namth) <= parseInt(namtr)) {
+          if (parseInt(thangth) <= parseInt(thangtr)) {
+            if (parseInt(ngayth) <= parseInt(ngaytr)) {
+              let tr = new Date(ngthue);
+              let sa = new Date(ngtra);
+              var songay = Math.ceil(
+                (sa.getTime() - tr.getTime()) / (24 * 60 * 60 * 1000)
+              );
+              var tien = tinhtien(songay);
+              document.getElementById("tien").value = tien;
+            }
+          }
+        } else {
+          document.getElementById("loi").innerText =
+            "Ngày trả phải sau ngày thuê";
+        }
+      }
+    }
+    function tinhtien(songay) {
+      var sodv = 0;
+      if (document.getElementById("ansang").checked == true) sodv++;
+      if (document.getElementById("giatui").checked == true) sodv++;
+      if (document.getElementById("baosang").checked == true) sodv++;
+      var mucgia = document.getElementById("mucgia").value;
+      if (mucgia == "a")
+        return 150000 * songay + (150000 * songay * sodv * 5) / 100;
+      if (mucgia == "b")
+        return 300000 * songay + (300000 * songay * (sodv - 1) * 5) / 100;
+      if (mucgia == "c")
+        return 500000 * songay + (500000 * songay * (sodv - 1) * 5) / 100;
+    }
+  </script>
+</html>
